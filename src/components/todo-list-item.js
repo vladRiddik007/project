@@ -1,22 +1,14 @@
 import React from 'react';
 
-const TodoListItem = () => {
+const TodoListItem = ({label, important = false}) => {
 
-    const items = [
-        {id: 1, text:"Learn React"},
-        {id: 2, text:"Build App Build App"},
-        {id: 3, text:"Build App"},
-        {id: 4, text:"Learn React"},
-        {id: 5, text:"Build App"},
-    ]
-
-    const itemMap = items.map(i => (
-        <li key={i.id}>{i.text}</li>
-    ))
+    const liStyle = {
+        color: important ? "tomato" : "black"
+    }
 
     return (
         <div>
-            {itemMap}
+            <ul style={liStyle}>{label}</ul>
         </div>
     )
 }
