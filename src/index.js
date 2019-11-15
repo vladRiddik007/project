@@ -6,6 +6,8 @@ import SearchPanel from './components/search-panel';
 import TodoList from './components/todo-list';
 import Clock from './components/clock';
 
+import './index.css';
+
 const App = () => {
 
     const todoData = [
