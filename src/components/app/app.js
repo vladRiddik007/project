@@ -4,14 +4,14 @@ import AppHeader from '../app-header';
 import SearchPanel from '../search-panel';
 import './app.css';
 import ItemStatusFilter from '../item-status-filter';
-import TodoListItem from '../todo-list-item';
+import TodoList from '../todo-list/todo-list';
 
 const App = () => {
 
     const todoData = [
-        {id: 1, label: "idfgdfg", important: true},
-        {id: 2, label: "drygd", important: false},
-        {id: 3, label: "54463363", important: false},
+        {label: "idfgdfg", important: true, id: 1,},
+        {label: "drygd", important: true, id: 2,},
+        {label: "54463363", important: true, id: 3,},
     ]
 
     return (
@@ -22,7 +22,7 @@ const App = () => {
                 <SearchPanel />
                 <ItemStatusFilter/>
             </div>
-            <TodoListItem todos={todoData}/>
+            <TodoList todos={todoData}/>
         </div>
     )
 }
