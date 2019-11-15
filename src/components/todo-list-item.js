@@ -1,15 +1,17 @@
-import React from 'react';
+import React from "react";
 
-const TodoListItem = ({label, important = false}) => {
+const TodoListItem = ({
+     label, 
+     important = false 
+    }) => {
+  const liStyle = {
+    color: important ? "tomato" : "black"
+  };
 
-    const liStyle = {
-        color: important ? "tomato" : "black"
-    }
-
-    return (
-        <div>
-            <ul style={liStyle}>{label}</ul>
-        </div>
-    )
-}
+  return (
+    <div>
+      <ul style={liStyle}>{label}</ul>
+    </div>
+  );
+};
 export default TodoListItem;

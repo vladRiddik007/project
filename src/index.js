@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import AppHeader from './components/app-header';
 import SearchPanel from './components/search-panel';
 import TodoList from './components/todo-list';
+import Clock from './components/clock';
 
 const App = () => {
 
@@ -15,6 +16,7 @@ const App = () => {
 
     return (
         <div>
+            <Clock/>
             <AppHeader />
             <SearchPanel />
             <TodoList todos={todoData}/>
