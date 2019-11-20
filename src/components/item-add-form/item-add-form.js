@@ -8,7 +8,7 @@ export default class ItemAddForm extends Component {
 
   onLabelChange = e => {
     this.setState({
-      label: e.target.value.toUpperCase()
+      label: e.target.value
     });
   };
 
@@ -16,9 +16,7 @@ export default class ItemAddForm extends Component {
     e.preventDefault();
     if (this.state.label.length) {
       this.props.addItem(this.state.label);
-      this.setState({
-        label: ""
-      });
+      this.setState({ label: "" });
     }
   };
 
