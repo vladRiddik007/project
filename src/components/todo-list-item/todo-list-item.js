@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import "./todo-list-item.css";
 
 export default class TodoListItem extends Component {
@@ -59,4 +60,13 @@ export default class TodoListItem extends Component {
       </span>
     );
   }
+}
+
+TodoListItem.propTypes = {
+  label: PropTypes.string.isRequired,
+  onDeleted: PropTypes.func.isRequired, 
+  onToggleImportant: PropTypes.func.isRequired, 
+  onToggleDone: PropTypes.func.isRequired, 
+  done: PropTypes.bool.isRequired, 
+  important: PropTypes.bool.isRequired
 }
