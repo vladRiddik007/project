@@ -1,20 +1,42 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 export default class ItemStatusFilter extends Component {
 
-    render() {
-
-        return(
-            <div className="btn-group">
-            <button type="button"
-                    className="btn btn-info">All</button>
-            <button type="button"
-                    className="btn btn-outline-secondary">
-                        Active</button>
-            <button type="button"
-                    className="btn btn-outline-secondary">
-                        Done</button>
-        </div>
-        )
+    buttons = [
+        this.createButtons('all'),
+        this.createButtons('active'),
+        this.createButtons('done'),
+    ]
+    
+    createButtons(name) {
+        return {
+            name,
+            label: name.charAt(0).toUpperCase() + name.slice(1)
+        }
     }
+    
+    
+    
+  render() {
+    
+    const {filter} = this.props;
+
+    const buttons = this.buttons.map(({name, label}) => {
+        const isActiv = filter === name;
+        const clazz = isActiv ? 'btn-info' : 'btn-outline-secondary';
+        return (
+            <button type='button'
+                    className={`btn ${clazz}`}
+                    key={name}>
+                {label}
+            </button>
+        )
+    })
+
+    return (
+      <div className="btn-group">
+          {buttons}
+      </div>
+    );
+  }
 }
